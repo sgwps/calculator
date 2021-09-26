@@ -77,13 +77,21 @@ def calc_extended():
     operations[choice.menu(operations)][0]()
 
 
+def sine_deg(angle):
+    raise NotImplementedError
+
+
+def coine_deg(angle):
+    raise NotImplementedError
+
+
 def calc_degrees():  # 3
     angle = int(input('Enter the angle in degrees: '))
     operations = {
-        1: (math.sin, "sine"),
-        2: (math.cos, "cosine"),
+        1: (sine_deg, "sine"),
+        2: (cosine_deg, "cosine"),
     }
-    print(operations[choice.menu(operations)][0](math.radians(angle)))
+    print(operations[choice.menu(operations)][0](angle))
 
 
 def calc_radians():  # 4
