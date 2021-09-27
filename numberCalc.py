@@ -1,6 +1,7 @@
 import math
 import choice
 
+
 def empty():
     raise NotImplementedError
 
@@ -102,7 +103,7 @@ def sine_deg(angle):
         return math.sin(math.radians(angle))
 
 
-def coine_deg(angle):
+def cosine_deg(angle):
     angle %= 360
     if angle == 180:
         return -1
