@@ -78,11 +78,57 @@ def calc_extended():
 
 
 def sine_deg(angle):
-    raise NotImplementedError
+    angle %= 360
+    coeff = 1
+    if angle in range(180, 360):
+        coeff = -1
+    if abs(angle % 180 - 90) == 90:
+        return 0
+    elif abs(angle % 180 - 90) == 60:
+        return 0.5 * coeff
+    elif abs(angle % 180 - 90) == 45:
+        if coeff == 1:
+            return '√2/2'
+        else:
+            return '-√2/2'
+    elif abs(angle % 180 - 90) == 30:
+        if coeff == 1:
+            return '√3/2'
+        else:
+            return '-√3/2'
+    elif angle == 90:
+        return 1
+    else:
+        return math.sin(math.radians(angle))
 
 
 def coine_deg(angle):
-    raise NotImplementedError
+    angle %= 360
+    if angle == 180:
+        return -1
+    if angle == 0:
+        return 1
+    angle %= 180
+    if angle in range(90, 180):
+        coeff = -1
+    if abs(angle % 180 - 90) == 0:
+        return 0
+    elif abs(angle % 180 - 90) == 30:
+        return 0.5 * coeff
+    elif abs(angle % 180 - 90) == 45:
+        if coeff == 1:
+            return '√2/2'
+        else:
+            return '-√2/2'
+    elif abs(angle % 180 - 90) == 60:
+        if coeff == 1:
+            return '√3/2'
+        else:
+            return '-√3/2'
+    elif angle == 90:
+        return 1
+    else:
+        return math.cos(math.radians(angle))
 
 
 def calc_degrees():  # 3
