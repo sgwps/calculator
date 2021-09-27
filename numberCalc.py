@@ -110,6 +110,7 @@ def cosine_deg(angle):
     if angle == 0:
         return 1
     angle %= 180
+    coeff = 1
     if angle in range(90, 180):
         coeff = -1
     if abs(angle % 180 - 90) == 0:
